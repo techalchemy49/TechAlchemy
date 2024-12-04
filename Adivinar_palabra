@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Adivinar_palabra {
+
+    public static void main(String[] args) {
+        JuegoAdivinanza juegoAdivinanza = new JuegoAdivinanza();
+        Palabra palabraActual = new Palabra(juegoAdivinanza.elegirPalabra());
+        boolean seguirJugando = true;
+        int opcionElegida = -1;
+        Scanner sc = new Scanner(System.in);
+
+        while (seguirJugando) {
+            System.out.println("----- BIENVENIDO -----");
+            System.out.println("1. Cambiar palabra.");
+            System.out.println("2. Adivinar letra.");
+            System.out.println("3. Mostrar progreso.");
+            System.out.println("4. Mostrar intentos fallidos.");
+            System.out.println("5. Salir.");
+            System.out.println("----- Elige una opción -----");
+}
