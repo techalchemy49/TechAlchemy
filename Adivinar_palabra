@@ -17,4 +17,51 @@ public class Adivinar_palabra {
             System.out.println("4. Mostrar intentos fallidos.");
             System.out.println("5. Salir.");
             System.out.println("----- Elige una opción -----");
+
+            if (sc.hasNextInt()) {
+                opcionElegida = sc.nextInt();
+                sc.nextLine();
+            } else {
+                System.out.println("Por favor, ingresa un número válido.");
+                sc.nextLine();
+                continue;
+            }
+
+            switch (opcionElegida) {
+                case 1:
+                    palabraActual = new Palabra(juegoAdivinanza.elegirPalabra());
+                    System.out.println("Se ha seleccionado una nueva palabra.");
+                    break;
+
+                case 2:
+                    System.out.print("Ingresa una letra: ");
+                    String input = sc.nextLine();
+                    if (input.length() == 1) {
+                        char letra = input.charAt(0);
+                        palabraActual.recibirLetra(letra);
+                    } else {
+                        System.out.println("Por favor, ingresa solo un carácter.");
+                    }
+                    break;
+
+                case 3:
+                    System.out.println("Progreso actual: " + palabraActual.getAvancePalabra());
+                    break;
+
+                case 4:
+                    System.out.println("Intentos realizados: " + palabraActual.getIntentos());
+                    break;
+
+                case 5:
+                    System.out.println("¡Gracias por jugar!");
+                    seguirJugando = false;
+                    break;
+
+                default:
+                    System.out.println("Opción no válida. Por favor, elige entre 1 y 5.");
+            }
+        }
+
+        sc.close();
+    }
 }
