@@ -4,6 +4,12 @@ Descripcion: Este proyecto es un juego de consola en el que el usuario debe adiv
 Esta diseñado para un parcial de universidad y utiliza 
 
 Tabla de contenido:
+  * Instalación
+  * Uso
+  * Contribucion
+  * Creditos
+_ _ _
+
 1. Instalación
    * Instalar Java 23 (JDK)
    * Instalar NetBeans desde la pagina oficial (IDE)
