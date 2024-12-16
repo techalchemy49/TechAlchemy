@@ -1,31 +1,29 @@
-import java.util.Scanner;
-
 public class Adivinar_palabra {
+    
 
+    
     public static void main(String[] args) {
+        Pantalla pant = new Pantalla();
+        pant.setVisible(true);
+        pant.setLocationRelativeTo(null);
         JuegoAdivinanza juegoAdivinanza = new JuegoAdivinanza();
         Palabra palabraActual = new Palabra(juegoAdivinanza.elegirPalabra());
         boolean seguirJugando = true;
         int opcionElegida = -1;
+        
         Scanner sc = new Scanner(System.in);
-
-        while (seguirJugando) {
+        
+        while (seguirJugando){
             System.out.println("----- BIENVENIDO -----");
             System.out.println("1. Cambiar palabra.");
             System.out.println("2. Adivinar letra.");
             System.out.println("3. Mostrar progreso.");
             System.out.println("4. Mostrar intentos fallidos.");
-            System.out.println("5. Salir.");
+            System.out.println("5. Acerca de");
+            System.out.println("6. Salir.");
             System.out.println("----- Elige una opción -----");
-
-            if (sc.hasNextInt()) {
-                opcionElegida = sc.nextInt();
-                sc.nextLine();
-            } else {
-                System.out.println("Por favor, ingresa un número válido.");
-                sc.nextLine();
-                continue;
-            }
+            opcionElegida =  Compartida.opcion;
+            
 
             switch (opcionElegida) {
                 case 1:
@@ -35,24 +33,32 @@ public class Adivinar_palabra {
 
                 case 2:
                     System.out.print("Ingresa una letra: ");
-                    String input = sc.nextLine();
-                    if (input.length() == 1) {
+                    String input = Compartida.letra;
+                    if (input != null) {
+                        if (input.length() == 1) {
                         char letra = input.charAt(0);
                         palabraActual.recibirLetra(letra);
                     } else {
                         System.out.println("Por favor, ingresa solo un carácter.");
                     }
                     break;
+                    } else {
+                        break;
+                    }
 
                 case 3:
+                    Compartida.progreso = palabraActual.getAvancePalabra();
                     System.out.println("Progreso actual: " + palabraActual.getAvancePalabra());
                     break;
 
                 case 4:
+                    Compartida.intentos = palabraActual.getIntentos();
                     System.out.println("Intentos realizados: " + palabraActual.getIntentos());
                     break;
-
                 case 5:
+                    integrantes();
+                    break;
+                case 6:
                     System.out.println("¡Gracias por jugar!");
                     seguirJugando = false;
                     break;
@@ -60,8 +66,14 @@ public class Adivinar_palabra {
                 default:
                     System.out.println("Opción no válida. Por favor, elige entre 1 y 5.");
             }
+          
         }
-
         sc.close();
     }
-}
+    public static void integrantes() {
+        System.out.println("///Grupo techAlchemy\\\\\\");
+        System.out.println("Jairo Andres Florez    Product owner");
+        System.out.println("Jose Leonardo Soler    SCRUM Master");
+        System.out.println("Yesid Duran            Desarrollador");
+        System.out.println("Carlos Calderon        Desarrollador");
+        System.out.println("Sebastian Sanchez      Desarrollador");
