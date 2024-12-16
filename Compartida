@@ -1,3 +1,5 @@
+package com.mycompany.adivinar_palabra;
+
 public class Compartida {
     public static int opcion, intentos;
     public static String letra, progreso;
