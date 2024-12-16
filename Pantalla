@@ -1,3 +1,5 @@
+package com.mycompany.adivinar_palabra;
+
 public class Pantalla extends javax.swing.JFrame {
     String texto;
 
