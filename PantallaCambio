@@ -1,3 +1,5 @@
+package com.mycompany.adivinar_palabra;
+
 public class PantallaCambioP extends javax.swing.JFrame {
 
     /**
