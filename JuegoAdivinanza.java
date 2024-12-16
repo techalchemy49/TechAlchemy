@@ -1,3 +1,4 @@
+package com.mycompany.adivinar_palabra;
 
 import java.util.Random;
 
