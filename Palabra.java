@@ -1,3 +1,4 @@
+package com.mycompany.adivinar_palabra;
 /**
  * Clase que representa una palabra que el jugador debe adivinar. Maneja la
  * lógica para el seguimiento del progreso y la validación del juego.
